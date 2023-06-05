@@ -5,11 +5,11 @@ services:
     build: mysql/
     container_name: myapp-mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=HelloWorld!
-      - MYSQL_DATABASE=flexdronedb2.0
-      - MYSQL_PASSWORD=HelloWorld!
+      - MYSQL_ROOT_PASSWORD=G8ePsjW5xgOeWY2wYl4I
+      - MYSQL_DATABASE=railway
+      - MYSQL_PASSWORD=G8ePsjW5xgOeWY2wYl4I
     ports:
-      - "3308:3306"
+      - "6888:6889"
 
   frontend:
     container_name: ecommerce-frontend
@@ -29,8 +29,14 @@ services:
     ports:
       - "8081:8080"
     environment:
-      - DATABASE_HOST=myapp-mysql
+      - DATABASE_HOST=containers-us-west-7.railway.app
       - DATABASE_USER=root
-      - DATABASE_PASSWORD=HelloWorld!
-      - DATABASE_NAME=flexdronedb2.0
-      - DATABASE_PORT=3308
+      - DATABASE_PASSWORD=G8ePsjW5xgOeWY2wYl4I
+      - DATABASE_NAME=railway
+      - DATABASE_PORT=6888
+#    environment:
+#      - DATABASE_HOST=myapp-mysql
+#      - DATABASE_USER=root
+#      - DATABASE_PASSWORD=HelloWorld!
+#      - DATABASE_NAME=flexdronedb2.0
+#      - DATABASE_PORT=3308
